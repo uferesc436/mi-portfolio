@@ -9,7 +9,7 @@ Este proyecto reúne mis trabajos y conocimientos en tecnologías como HTML, CSS
 * [Portafolio Web] (https://uferesc436.github.io/mi-portfolio/)
 
 ## Ver ejemplo en vivo 🌐
-* [Haz clic aquí] (https://uferesc436.github.io/mi-portfolio/)
+* [Haz clic aquí](https://uferesc436.github.io/mi-portfolio/)
 
 ## Instalación ⚙️
 Este proyecto no necesita intalación.
