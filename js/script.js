@@ -1,29 +1,29 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburguesa = document.querySelector('.hamburguesa');
+    const navegacion = document.querySelector('.enlaces-nav');
+    const enlacesNav = document.querySelectorAll('.enlaces-nav li');
 
-    burger.addEventListener('click', () => {
-        // Toggle Nav
-        nav.classList.toggle('nav-active');
+    // Evento para abrir/cerrar el menú
+    hamburguesa.addEventListener('click', () => {
+        navegacion.classList.toggle('nav-activo');
 
-        // Animate Links
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = '';
+        // Animación de enlaces
+        enlacesNav.forEach((enlace, indice) => {
+            if (enlace.style.animation) {
+                enlace.style.animation = '';
             } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                enlace.style.animation = `desvanecerEnlaceNav 0.5s ease forwards ${indice / 7 + 0.3}s`;
             }
         });
 
-        // Burger Animation
-        burger.classList.toggle('toggle');
+        // Animación de la hamburguesa
+        hamburguesa.classList.toggle('toggle');
     });
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+    // Desplazamiento suave al hacer clic en los enlaces
+    document.querySelectorAll('a[href^="#"]').forEach(enlace => {
+        enlace.addEventListener('click', function (evento) {
+            evento.preventDefault();
 
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'

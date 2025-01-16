@@ -17,6 +17,7 @@ body {
 nav {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -32,19 +33,19 @@ nav {
     font-weight: bold;
 }
 
-.nav-links {
+.enlaces-nav {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     width: auto;
 }
 
-.nav-links li {
+.enlaces-nav li {
     list-style: none;
     margin-left: 20px;
 }
 
-.nav-links a {
+.enlaces-nav a {
     color: #fff;
     text-decoration: none;
     font-size: 0.9rem;
@@ -52,16 +53,16 @@ nav {
     padding: 5px 10px;
 }
 
-.nav-links a:hover {
+.enlaces-nav a:hover {
     color: #ffd700;
 }
 
-.burger {
+.hamburguesa {
     display: none;
     cursor: pointer;
 }
 
-.burger div {
+.hamburguesa div {
     width: 25px;
     height: 3px;
     background-color: #fff;
@@ -69,8 +70,20 @@ nav {
     transition: all 0.3s ease;
 }
 
-/* Boton CV */
-.cv-button {
+.hamburguesa.toggle .linea1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburguesa.toggle .linea2 {
+    opacity: 0;
+}
+
+.hamburguesa.toggle .linea3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Botón CV */
+.boton-cv {
     display: inline-block;
     padding: 15px 20px;
     background-color: #ffd700;
@@ -82,10 +95,9 @@ nav {
     font-weight: bold;
 }
 
-.cv-button:hover {
+.boton-cv:hover {
     background-color: #e6c200;
 }
-
 
 /* Secciones */
 section {
@@ -100,7 +112,7 @@ h2 {
     color: #5D4954;
 }
 
-/* Hero Section */
+/* Sección Hero */
 .hero {
     height: 100vh;
     display: flex;
@@ -124,14 +136,14 @@ h2 {
 }
 
 /* Sobre Mí */
-.about-content {
+.contenido-sobre-mi {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-.profile-pic {
+.foto-perfil {
     width: 180px;
     height: 180px;
     border-radius: 50%;
@@ -139,21 +151,21 @@ h2 {
     object-fit: cover;
 }
 
-.about-content p {
+.contenido-sobre-mi p {
     margin-bottom: 8px;
 }
 
 /* Habilidades */
-.skills-container {
+.contenedor-habilidades {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     justify-content: center;
     max-width: 600px;
     margin: 0 auto;
 }
 
-.skill {
+.habilidad {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -166,83 +178,91 @@ h2 {
     transition: transform 0.3s ease;
 }
 
-.skill:hover {
+.habilidad:hover {
     transform: scale(1.05);
 }
 
-.skill i {
+.habilidad i {
     font-size: 2.5rem;
     margin-bottom: 10px;
     color: #5D4954;
 }
 
-.skill h3 {
+.habilidad h3 {
     font-size: 1rem;
     color: #333;
 }
 
 /* Proyectos */
-.projects-container {
+.contenedor-proyectos {
     text-align: center;
 }
 
-/* Footer */
-footer {
+/* Pie de página */
+pie {
     background-color: #5D4954;
     color: white;
     text-align: center;
     padding: 15px;
 }
 
-.social-links {
+enlaces-sociales {
     margin-bottom: 10px;
 }
 
-.social-links a {
+enlaces-sociales a {
     color: white;
     font-size: 1.3rem;
     margin: 0 8px;
     transition: color 0.3s ease;
 }
 
-.social-links a:hover {
+enlaces-sociales a:hover {
     color: #ffd700;
 }
 
-/* Responsive Design */
+/* Diseño Responsive */
 @media screen and (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        right: 0px;
-        height: 92vh;
-        top: 8vh;
+    .enlaces-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
         background-color: #5D4954;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         width: 50%;
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
     }
-    .nav-links li {
+
+    .enlaces-nav li {
         opacity: 0;
     }
-    .burger {
+
+    .hamburguesa {
         display: block;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .skills-container {
+    .contenedor-habilidades {
         grid-template-columns: 1fr;
     }
 }
 
-.nav-active {
+.nav-activo {
     transform: translateX(0%);
 }
 
-@keyframes navLinkFade {
+.nav-activo li {
+    opacity: 1;
+    animation: desvanecerEnlaceNav 0.5s ease forwards 0.3s;
+}
+
+@keyframes desvanecerEnlaceNav {
     from {
         opacity: 0;
         transform: translateX(50px);
