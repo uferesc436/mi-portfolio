@@ -199,26 +199,36 @@ h2 {
 }
 
 /* Pie de página */
-pie {
-    background-color: #5D4954;
+footer {
+    background-color: #5D4954 !important;
     color: white;
     text-align: center;
-    padding: 15px;
+    padding: 25px 10%;
+    margin-top: 30px;
+    min-height: 100px; /* Altura mínima */
 }
 
-enlaces-sociales {
-    margin-bottom: 10px;
+.enlaces-sociales {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
-enlaces-sociales a {
+.enlaces-sociales a {
     color: white;
-    font-size: 1.3rem;
-    margin: 0 8px;
+    font-size: 1.5rem;
     transition: color 0.3s ease;
 }
 
-enlaces-sociales a:hover {
+.enlaces-sociales a:hover {
     color: #ffd700;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #ddd;
+    margin-top: 10px;
 }
 
 /* Diseño Responsive */
